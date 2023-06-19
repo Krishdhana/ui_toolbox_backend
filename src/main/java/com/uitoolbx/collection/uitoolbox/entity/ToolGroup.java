@@ -1,28 +1,31 @@
 package com.uitoolbx.collection.uitoolbox.entity;
 
 import jakarta.persistence.*;
-import org.apache.catalina.util.IOTools;
 
 import java.util.List;
 
 @Entity
-@Table(name = "toolgroup")
+@Table(name = "tool_group")
 public class ToolGroup {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
+
     private String name;
 
+    @Transient
     private List<Tool> toolList;
 
-    public ToolGroup() {}
+    public  ToolGroup() {};
+    public ToolGroup(String name) {
+        this.name = name;
+    }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -1,7 +1,6 @@
 package com.uitoolbx.collection.uitoolbox.service;
 
 import com.uitoolbx.collection.uitoolbox.entity.Tool;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

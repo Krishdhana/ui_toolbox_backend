@@ -5,15 +5,26 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "tool")
 public class Tool {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String label;
+
+    private String name;
+
     private String url;
+
     private String description;
+    private Long groupId;
 
 
     public Tool() {}
+
+    public Tool(String name, String url, String description) {
+        this.name = name;
+        this.url = url;
+        this.description = description;
+    }
 
     public Long getId() {
         return id;
@@ -23,12 +34,12 @@ public class Tool {
         this.id = id;
     }
 
-    public String getLabel() {
-        return label;
+    public String getName() {
+        return name;
     }
 
-    public void setLabel(String label) {
-        this.label = label;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUrl() {
@@ -47,13 +58,22 @@ public class Tool {
         this.description = description;
     }
 
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public String toString() {
         return "Tool{" +
                 "id=" + id +
-                ", label='" + label + '\'' +
+                ", name='" + name + '\'' +
                 ", url='" + url + '\'' +
                 ", description='" + description + '\'' +
+                ", groupId=" + groupId +
                 '}';
     }
 }
