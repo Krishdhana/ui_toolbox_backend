@@ -25,22 +25,30 @@ public class ToolServiceImpl implements ToolService {
 
     @Override
     public List<Tool> getAllTools() {
-        return null;
+        return this.toolRepository.findAll();
     }
 
     @Override
-    public void addTool(Tool tool) {
+    public String addTool(Tool tool) {
         this.toolRepository.save(tool);
+        return "Tool added with name" + tool.getName();
+    }
+
+    @Override
+    public String deleteTool(Long id) {
+        this.toolRepository.deleteById(id);
+        return "Tool with ID "+ id + "has been Deleted";
+    }
+
+    @Override
+    public String updateTool(Tool tool) {
+        this.toolRepository.save(tool);
+        return "Tool with ID "+ tool.getId() + "has been Updated";
 
     }
 
     @Override
-    public void deleteTool(Long id) {
-
-    }
-
-    @Override
-    public void updateTool(Tool tool) {
-
+    public List<Tool> getToolListWithGroupId(Long id) {
+        return this.toolRepository.findToolByGroupId(id);
     }
 }

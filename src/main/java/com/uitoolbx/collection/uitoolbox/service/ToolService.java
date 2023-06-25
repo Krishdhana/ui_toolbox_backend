@@ -11,9 +11,11 @@ public interface ToolService {
 
     public List<Tool> getAllTools();
 
-    public void addTool(Tool tool);
+    public String addTool(Tool tool);
 
-    public void deleteTool(Long id);
+    public String deleteTool(Long id);
 
-    public void updateTool(Tool tool);
+    public String updateTool(Tool tool);
+
+    public List<Tool> getToolListWithGroupId(Long id);
 }

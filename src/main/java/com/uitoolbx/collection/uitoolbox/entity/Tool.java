@@ -5,15 +5,11 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "tool")
 public class Tool {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
     private String url;
-
     private String description;
     private Long groupId;
 

@@ -17,6 +17,7 @@ public class ToolGroup {
     private List<Tool> toolList;
 
     public  ToolGroup() {};
+
     public ToolGroup(String name) {
         this.name = name;
     }
